@@ -15,7 +15,7 @@ class LifeTests(unittest.TestCase):
         directory = tempfile.TemporaryDirectory()
         self.addCleanup(directory.cleanup)
         self.root = Path(directory.name)
-        for kind in ("day", "week", "case", "knowledge", "decision", "post"):
+        for kind in ("day", "week", "case", "knowledge", "post"):
             self.write(f"templates/{kind}.md", TEMPLATE)
 
     def write(self, name, content):
@@ -60,7 +60,6 @@ class LifeTests(unittest.TestCase):
         destinations = {
             "case": "cases/example-1/README.md",
             "knowledge": "knowledge/example-1.md",
-            "decision": "decisions/2026-11-25-example-1.md",
             "post": "content/drafts/example-1.md",
         }
         for kind, path in destinations.items():

@@ -20,7 +20,6 @@ EXCLUDED = {".git", ".local", "private", "node_modules"}
 DESTINATIONS = {
     "case": "cases/{slug}/README.md",
     "knowledge": "knowledge/{slug}.md",
-    "decision": "decisions/{date}-{slug}.md",
     "post": "content/drafts/{slug}.md",
 }
 CASE_INDEX = "# Дела\n\n## Активные\n\n## Закрытые\n"
@@ -298,7 +297,7 @@ def main():
         ("search", "найти буквальные совпадения в Markdown"),
     ):
         commands.add_parser(command, description=help_text.capitalize() + ".", help=help_text)
-    commands.choices["new"].add_argument("kind", choices=DESTINATIONS, metavar="KIND", help="case, knowledge, decision или post")
+    commands.choices["new"].add_argument("kind", choices=DESTINATIONS, metavar="KIND", help="case, knowledge или post")
     commands.choices["new"].add_argument("slug", metavar="SLUG", help="идентификатор из a–z, 0–9 и дефисов")
     commands.choices["new"].add_argument("--title", required=True, help="заголовок записи")
     commands.choices["check"].add_argument("--json", action="store_true", help="вывести отчёт в JSON")
