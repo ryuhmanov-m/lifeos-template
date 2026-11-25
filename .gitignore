@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.local/
+private/
+.env
+.env.*
+*.pem
+*.key
+.claude/*
+!.claude/settings.json
+!.claude/skills
+.codex/*
+!.codex/config.toml

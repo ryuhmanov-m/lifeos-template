@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./tools/life *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(rm *)"
+    ]
+  },
+  "attribution": false
+}
